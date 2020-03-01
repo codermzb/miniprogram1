@@ -1,6 +1,6 @@
 <template>
   <div class="goods-list">
-    <goods-list-item v-for="item in goods" :key="item" :item-info="item"/>
+    <goods-list-item v-for="item in goods" :key="item.iid" :item-info="item" class="goods-list-item"/>
   </div>
 </template>
 
@@ -25,7 +25,10 @@
 <style scoped>
   .goods-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+  }
+  .goods-list-item {
+    width: 48%;
   }
 </style>

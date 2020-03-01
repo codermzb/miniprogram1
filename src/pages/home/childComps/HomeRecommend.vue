@@ -1,7 +1,7 @@
 <template>
   <view class="recommend">
-    <view v-for="item in recommends" :key="item" class="recommend-item">
-      <img :src="item.image" alt="" mode="widthFix">
+    <view v-for="(item, index) in recommends" :key="index" class="recommend-item">
+      <img :src="item.image" alt="" mode="widthFix" @load="imageLoad">
       <view class="title">{{item.title}}</view>
     </view>
   </view>
@@ -15,6 +15,19 @@
         type: Array,
         default() {
           return []
+        }
+      }
+    },
+    data() {
+      return {
+        tem: true
+      }
+    },
+    methods: {
+      imageLoad() {
+        if(this.tem) {
+          this.$emit('imageLoad')
+          this.tem = !this.tem
         }
       }
     }
