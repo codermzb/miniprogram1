@@ -59,9 +59,6 @@
       this._getHomeGoods('new')
       this._getHomeGoods('sell')
     },
-    onShow() {
-
-    },
     methods: {
       _getHomeMultidata() {
         getHomeMultidata().then(res => {
